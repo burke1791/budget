@@ -2,6 +2,10 @@
 
 cd $(dirname $BASH_SOURCE)
 
+LOG_FILE=/mnt/burke/budget/logs/raw_data.log
+exec 1>> >(ts '[%Y-%m-%d %H:%M:%S]' >> "$LOG_FILE") 2>&1
+
+
 echo
 echo "**********************************************************************"
 echo "****************  Begin Load Raw Transactions Job  *******************"
