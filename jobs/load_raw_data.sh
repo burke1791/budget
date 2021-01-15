@@ -28,5 +28,12 @@ bash ../scripts/load_file.sh chase_freedom
 bash ../scripts/load_file.sh discover_card
 
 
+# Process raw transaction data
+echo
+echo "processing raw transaction data"
+echo
+
+psql -U postgres -d budget -c "Call process_raw_transactions()"
+
 echo
 echo "job complete"

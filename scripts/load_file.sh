@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 cd $(dirname $BASH_SOURCE)
+echo
 
 if [ -z "$1" ]; then
 	echo "ERROR: folder name not provided"
@@ -15,7 +16,8 @@ for filename in /mnt/burke/landing_zone/$1/*; do
 	fi
 done;
 
-if [ -z {$tranFile+x} ]; then
+
+if [ -z ${tranFile+x} ]; then
 	echo "no file found for $1, exiting early"
 	exit 0
 fi
