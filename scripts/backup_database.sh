@@ -14,7 +14,7 @@ echo "backing up database: $1"
 pg_dump -U postgres $1 | gzip > $filename.gz
 
 echo "copying backup file to s3"
-aws s3 cp backup_$1_$date.gz s3://burkcules-budget/backups/$filename.gz --storage-class=ONEZONE_IA
+/usr/local/bin/aws s3 cp backup_$1_$date.gz s3://burkcules-budget/backups/$filename.gz --storage-class=ONEZONE_IA
 
 echo "deleting local backup file"
 rm $filename.gz
